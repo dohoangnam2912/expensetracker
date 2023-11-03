@@ -1,3 +1,4 @@
+//Mongoose DB. Cloud file
 const mongoose = require('mongoose');
 
 const db = async () => {
@@ -9,3 +10,5 @@ const db = async () => {
         console.log('DB Connection Error');
     }
 }
+
+module.exports = {db}
