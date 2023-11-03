@@ -10,6 +10,8 @@ import Dashboard from './Components/Dashboard/Dashboard'
 function App() {
   const [active, setActive] = useState(1);
   
+  use
+
   const displayData = () => {
     switch(active) {
       case 1:
