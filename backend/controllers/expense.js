@@ -1,9 +1,9 @@
-const IncomeSchema = require("../models/incomeModels");
+const ExpenseSchema = require("../models/expenseModels");
 
-exports.addIncome = async (req, res) => {
+exports.addExpense = async (req, res) => {
     const {title, amount, category, description, date} = req.body;
 
-    const income = new IncomeSchema({
+    const expense = new ExpenseSchema({
         title,
         amount,
         category,
@@ -19,33 +19,33 @@ exports.addIncome = async (req, res) => {
         if(amount <= 0 || !amount === 'number') {
             return res.status(400).json({message: 'Amount must be a positive number'})
         }
-        let incomeSave = await income.save()
-        console.log(incomeSave);
-        res.status(200).json({message: 'Income added'})
+        let expenseSave = await expense.save()
+        console.log(expenseSave);
+        res.status(200).json({message: 'Expense added'})
     } catch (error) {
         console.log('error' + error);
         res.status(500).send(error);
     }
 
-    console.log(income);
+    console.log(expense);
     // console.log(req.body);
 }
 
-exports.getIncome = async (req, res) => {
+exports.getExpense = async (req, res) => {
     try {
-        const incomes = await IncomeSchema.find().sort({createdAt: -1});
-        res.status(200).json(incomes)
+        const expenses = await ExpenseSchema.find().sort({createdAt: -1});
+        res.status(200).json(expenses)
     } catch (error) {
         console.log('error' + error);
         res.status(500).send(error);
     }
 }
 
-exports.deleteIncome = async (req, res) => {
+exports.deleteExpense = async (req, res) => {
     const {id} = req.params;
-    IncomeSchema.findByIdAndDelete(id)
-    .then((income) => {
-        res.status(200).json({message: 'Income deleted'})
+    ExpenseSchema.findByIdAndDelete(id)
+    .then((expense) => {
+        res.status(200).json({message: 'Expense deleted'})
     }) .catch ((error) => {
         console.log('error' + error);
         res.status(500).send(error);
