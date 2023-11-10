@@ -21,6 +21,7 @@ function Incomes () {
                         <Form />
                     </div>
                     <div className='incomes'>
+<<<<<<< HEAD
                         {incomes.map((income) => {
                             const {_id, title, amount, date, category, description} = income;
                             return <IncomeItem
@@ -35,6 +36,8 @@ function Incomes () {
                                 deleteItem={deleteIncome}   
                             />
                         })}
+=======
+>>>>>>> b6fdee90284f1dc3c610538ea9d8f462faa4154a
                     </div>
                 </div>
             </InnerLayout>

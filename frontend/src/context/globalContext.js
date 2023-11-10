@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 import React, {useState, useContext} from 'react';
 import axios from 'axios';
 import { clothing } from '../utils/icons';
+=======
+import React from 'react';
+import axios from 'axios';
+>>>>>>> b6fdee90284f1dc3c610538ea9d8f462faa4154a
 
 const BASE_URL = "http://localhost:5000/api/v1/";
 
@@ -11,6 +16,7 @@ export const GlobalProvider = ({children}) => {
     const [expenses, setExpenses] = useState([])
     const [error, setError] = useState(null)
 
+<<<<<<< HEAD
     //calculate income
     const addIncome = async (income) => {
         const response = await axios.post(`${BASE_URL}add-income`, income)
@@ -81,6 +87,17 @@ export const GlobalProvider = ({children}) => {
             deleteExpense,
             totalExpense,
         }}>
+=======
+    const addIncome = async (income) => {
+        const response = await axios.post(`${BASE_URL}add_income`, income)
+        .catch((err) => {
+            setError(err.response.data.message)
+        })
+    }
+
+    return (
+        <GlobalContext.Provider value={"Hello"}>
+>>>>>>> b6fdee90284f1dc3c610538ea9d8f462faa4154a
             {children}
         </GlobalContext.Provider>
     )
