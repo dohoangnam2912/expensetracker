@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css"
-import { useGlobalContext } from '../context/globalContext'
-import Button from '../Components/Button/Button'
-import {plus} from '../utils/icons'
+import { useGlobalContext } from '../../context/globalContext';
+import Button from '../../Components/Button/Button'
+import {plus} from '../../utils/icons'
 
 function ExpenseForm() {
     const {addExpense, getExpenses} = useGlobalContext();
@@ -70,13 +70,13 @@ function ExpenseForm() {
                 
                 <select required value={category} name="category" id="category" onChange={handleInput('category')}>
                     <option value="" disabled>Select Option</option>
-                    <option value="salary" >Salary</option>
-                    <option value="freelancing" >Freelancing</option>
-                    <option value="investments" >Investments</option>
-                    <option value="stocks" >Stocks</option>
-                    <option value="bitcoin" >Bitcoin</option>
-                    <option value="bank" >Bank</option>
-                    <option value="youtube" >Youtube</option>
+                    <option value="education" >Education</option>
+                    <option value="groceries" >Groceries</option>
+                    <option value="health" >Health</option>
+                    <option value="subscriptions" >Subscriptions</option>
+                    <option value="takeaways" >Takeaways</option>
+                    <option value="clothing" >Clothing</option>
+                    <option value="travelling" >Travelling</option>
                     <option value="other" >Other</option>
                 </select>
             </div>
@@ -158,4 +158,4 @@ const ExpenseFormStyled = styled.form`
 
 
 `
-export default Form
+export default ExpenseForm

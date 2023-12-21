@@ -10,14 +10,9 @@ import Dashboard from './Components/Dashboard/Dashboard'
 import { useGlobalContext } from './context/globalContext';
 function App() {
   const [active, setActive] = useState(1);
-<<<<<<< HEAD
 
   const global = useGlobalContext()
   console.log(global);
-=======
-  
-  use
->>>>>>> b6fdee90284f1dc3c610538ea9d8f462faa4154a
 
   const displayData = () => {
     switch(active) {
